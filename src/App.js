@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import About from './About';
-import Contact from './Contact';
-import Dog from './Dog';
-import './App.css';
+import reactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { page: 'about' }
-  }
+reactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  document.getElementById("root")
+);
 
-  render() {
-    return (
-      <div className='App' >
-
-      </div>
-    );
-  }
-}
-
-export default App;
+serviceWorker.unregister();
