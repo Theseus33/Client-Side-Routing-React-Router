@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import reactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import About from './About';
+import Dog from "./Dog";
+import Contact from "./Contact";
+import "./App.css"
 
-reactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  document.getElementById("root")
-);
 
-serviceWorker.unregister();
+class App extends Component {
+  render() {
+    <div className='App'>
+      <Route path="/dog" component={Dog} />
+    </div>
+  }
+}
