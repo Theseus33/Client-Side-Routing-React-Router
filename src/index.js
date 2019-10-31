@@ -8,8 +8,8 @@ import * as serviceWorker from './serviceWorker';
 reactDOM.render(
     <BrowserRouter>
         <App />
-    </BrowserRouter>
-  document.getElementById("root")
+    </BrowserRouter>,
+    document.getElementById("root")
 );
 
 serviceWorker.unregister();
