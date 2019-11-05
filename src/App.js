@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import About from './About';
 import Dog from "./Dog";
 import Contact from "./Contact";
@@ -12,22 +12,19 @@ class App extends Component {
     return (
       <div className='App'>
         <nav className='App-nav'>
-          <Link to='/'>About</Link>
-          <Link to='/dog'>Dog</Link>
-          <Link to='/contact'>Contact</Link>
-          <a href="/dog">Dog</a>
-          <a href="/contact">Contact</a>
-          <a href="/">Aout</a>
+          <NavLink activeClassName='active-link' to='/'>About</NavLink>
+          <NavLink activeClassName='active-link' to='/dog'>Dog</NavLink>
+          <NavLink activeClassName='active-link' to='/contact'>Contact</NavLink>
         </nav>
         <Switch>
           <Route exact path="/" component={About} />
-          <Route path="/dog" component={Dog} />
-          <Route path="/dog/hater" component={Hater} />
-          <Route path="/contact" component={Contact} />
+          <Route exact path="/dog" component={() => <Dog name='Muffins' />} />
+          <Route exact path="/dog/hater" component={Hater} />
+          <Route exact path="/contact" component={Contact} />
         </Switch>
       </div>
     )
   }
 }
 
-export default App;
+export default App; 
